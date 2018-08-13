@@ -1,18 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.workstation.places.MapActivity">
+    android:layout_width="match_parent">
 
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_gravity="center"
         android:layout_height="match_parent"
-        />
+        android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_70_dp"
+                android:id="@+id/internet_layout"
+                android:layout_alignParentBottom="true"
+                android:visibility="gone"
+                android:background="@color/black">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/internet_text"
+                    android:text="Internet disconnected"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_18_dp"
+                    android:layout_marginLeft="@dimen/dimen_20_dp"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!--<android.support.v4.widget.NestedScrollView-->
+            <!--android:id="@+id/bottom_sheet"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/white"-->
+            <!--app:layout_behavior="android.support.design.widget.BottomSheetBehavior">-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:padding="@dimen/dimen_20_dp"-->
+                    <!--android:background="@color/black"-->
+                    <!--android:id="@+id/bottomsheet_title">-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="@dimen/dimen_80_dp"-->
+                        <!--android:id="@+id/bottom_title_layout">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/title"-->
+                            <!--android:text="Service Centre"-->
+                            <!--android:textSize="@dimen/dimen_20_dp"-->
+                            <!--android:textColor="@color/white"/>-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/rating"-->
+                            <!--android:text="2.0"-->
+                            <!--android:layout_marginStart="@dimen/dimen_1_dp"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:textSize="@dimen/dimen_15_dp"-->
+                            <!--android:textColor="@color/white"/>-->
+
+                        <!--<RatingBar-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/ratingBar"-->
+                            <!--android:layout_marginLeft="@dimen/dimen_30_dp"-->
+                            <!--style="?android:attr/ratingBarStyleSmall"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:progressTint="@color/white"-->
+                            <!--android:textSize="@dimen/dimen_15_dp"-->
+                            <!--android:textColor="@color/white"/>-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/review"-->
+                            <!--android:text="2 reviews"-->
+                            <!--android:layout_toRightOf="@+id/ratingBar"-->
+                            <!--android:layout_marginLeft="@dimen/dimen_10_dp"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:textSize="@dimen/dimen_15_dp"-->
+                            <!--android:textColor="@color/white"/>-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/time"-->
+                            <!--android:text="22 min"-->
+                            <!--android:layout_toRightOf="@+id/rating"-->
+                            <!--android:layout_alignParentEnd="true"-->
+                            <!--android:gravity="right"-->
+                            <!--android:visibility="gone"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:textSize="@dimen/dimen_15_dp"-->
+                            <!--android:textColor="@color/white"/>-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/vicinity"-->
+                            <!--android:text="provide by Google"-->
+                            <!--android:layout_alignParentBottom="true"-->
+                            <!--android:textSize="@dimen/dimen_15_dp"-->
+                            <!--android:textColor="@color/white"/>-->
+                    <!--</RelativeLayout>-->
+                <!--</RelativeLayout>-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/dimen_100_dp"-->
+                    <!--android:id="@+id/bottom_call_layout"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:layout_below="@+id/bottomsheet_title"-->
+                    <!--android:weightSum="10">-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:id="@+id/call_layout"-->
+                        <!--android:clickable="true"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_weight="5">-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="@dimen/dimen_35_dp"-->
+                            <!--android:layout_height="@dimen/dimen_35_dp"-->
+                            <!--android:id="@+id/call_image"-->
+                            <!--android:tint="@color/black"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:src="@drawable/ic_call_white_24dp-web"/>-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/call_text"-->
+                            <!--android:layout_centerHorizontal="true"-->
+                            <!--android:textColor="@color/colorPrimary"-->
+                            <!--android:layout_marginTop="@dimen/dimen_10_dp"-->
+                            <!--android:layout_below="@+id/call_image"-->
+                            <!--android:text="CALL"-->
+                            <!--android:textSize="@dimen/dimen_12_dp"/>-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:id="@+id/directions_layout"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:clickable="true"-->
+                        <!--android:layout_weight="5">-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="@dimen/dimen_35_dp"-->
+                            <!--android:layout_height="@dimen/dimen_35_dp"-->
+                            <!--android:id="@+id/directions_image"-->
+                            <!--android:tint="@color/black"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:src="@drawable/ic_directions_white_24dp-web"/>-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/directions_text"-->
+                            <!--android:layout_centerHorizontal="true"-->
+                            <!--android:textColor="@color/colorPrimary"-->
+                            <!--android:layout_marginTop="@dimen/dimen_10_dp"-->
+                            <!--android:layout_below="@+id/directions_image"-->
+                            <!--android:text="DIRECTIONS"-->
+                            <!--android:textSize="@dimen/dimen_12_dp"/>-->
+                    <!--</RelativeLayout>-->
+                <!--</LinearLayout>-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/dimen_1_dp"-->
+                    <!--android:id="@+id/seperator"-->
+                    <!--android:background="@color/black"-->
+                    <!--android:layout_below="@+id/bottom_call_layout"/>-->
+
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/bottom_last_layout"-->
+                    <!--android:layout_below="@+id/bottom_call_layout">-->
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="@dimen/dimen_35_dp"-->
+                        <!--android:layout_height="@dimen/dimen_35_dp"-->
+                        <!--android:id="@+id/location_image"-->
+                        <!--android:src="@drawable/baseline_location_on_white_18dp"-->
+                        <!--android:layout_margin="@dimen/dimen_25_dp"-->
+                        <!--android:tint="@color/black"/>-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="@dimen/dimen_250_dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:id="@+id/address"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:textColor="@color/black"-->
+                        <!--android:layout_marginTop="@dimen/dimen_20_dp"-->
+                        <!--android:textSize="@dimen/dimen_15_dp"-->
+                        <!--android:layout_toRightOf="@+id/location_image"-->
+                        <!--android:text="address"/>-->
+                <!--</RelativeLayout>-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/dimen_1_dp"-->
+                    <!--android:id="@+id/seperator1"-->
+                    <!--android:layout_marginTop="@dimen/dimen_20_dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:layout_below="@+id/bottom_last_layout"/>-->
+
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/dimen_70_dp"-->
+                    <!--android:id="@+id/internet_bottom_layout"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:visibility="gone"-->
+                    <!--android:background="@color/black">-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:id="@+id/internet_bottom_text"-->
+                        <!--android:text="Internet disconnected"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="@dimen/dimen_16_dp"-->
+                        <!--android:layout_marginLeft="@dimen/dimen_20_dp"-->
+                        <!--android:layout_centerVertical="true"/>-->
+                <!--</RelativeLayout>-->
+            <!--</RelativeLayout>-->
+        <!--</android.support.v4.widget.NestedScrollView>-->
+    </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>
