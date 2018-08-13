@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Places</string>
+    <string name="add_loaction_text">Add Location</string>
+</resources>
